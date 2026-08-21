@@ -57,6 +57,11 @@
 
 ## 사이트 위생 규칙 (반드시 지킬 것)
 
+- `_config.yml`의 `timezone: Asia/Seoul`을 지우지 말 것 — 없으면 UTC 기준이라
+  **발행 날짜가 하루 밀려 표시된다** (2026-08-21 실제 발생).
+- 입문용 글에만 front matter `starter: true` + `starter_order: N`을 넣는다
+  (홈의 "처음 오셨다면" 추천 순서에 노출됨). 일반 글에는 넣지 않는다.
+
 - `_config.yml`의 `exclude`에서 `CLAUDE.md`·`docs/`·`scripts/`·`_unpublished_en/`를 **절대 빼지 말 것**
   (내부 문서가 공개 사이트에 노출되고 사이트맵에 실림 — 2026-08-21 실제 사고).
 - 글 URL은 `permalink: /post/:title/` — 한글 카테고리가 URL에 들어가지 않게 유지.

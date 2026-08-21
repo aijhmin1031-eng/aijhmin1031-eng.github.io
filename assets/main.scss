@@ -221,3 +221,16 @@ table th, table td { border: 1px solid #EAE2D8; }
 .drop-title { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.2rem; color: #3E322E; }
 .drop-date { margin-left: auto; font-size: .85rem; color: #9b8f86; }
 .drop-note { color: #7a6f68; font-size: .9rem; margin: 8px 0 0; }
+
+/* --- 처음 방문자용 읽기 순서 --- */
+.starter-box {
+  margin: 34px 0 10px; padding: 18px 22px; border-radius: 14px;
+  background: #FAF7F2; border: 1px solid #EAE2D8;
+}
+.starter-title {
+  margin: 0 0 10px; font-family: "Gowun Batang", serif; font-weight: 700;
+  font-size: 1.02rem; color: #3E322E;
+}
+.starter-list { margin: 0; padding-left: 22px; }
+.starter-list li { margin-bottom: 6px; font-size: .95rem; }
+.starter-list li::marker { color: #BA626A; font-weight: 700; }

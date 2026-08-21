@@ -4,8 +4,20 @@ layout: default
 <div class="home">
   {{ content }}
 
+  {%- assign starter = site.posts | where_exp: "p", "p.starter == true" | sort: "starter_order" -%}
+  {%- if starter.size > 0 -%}
+  <div class="starter-box">
+    <p class="starter-title">📖 처음 오셨다면, 이 순서로 읽어보세요</p>
+    <ol class="starter-list">
+      {%- for post in starter -%}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+      {%- endfor -%}
+    </ol>
+  </div>
+  {%- endif -%}
+
   <h2 class="latest-heading">작업 노트</h2>
-  <p class="latest-sub">만들고 팔면서 남긴 기록들 — 매일 한 편씩 쌓고 있습니다.</p>
+  <p class="latest-sub">만들고 팔면서 남긴 기록들 — 최신 글이 위에 옵니다.</p>
   <div class="post-cards">
     {%- for post in site.posts -%}
     <a class="post-card" href="{{ post.url | relative_url }}">

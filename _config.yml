@@ -3,6 +3,7 @@ description: >-
   만들고, 팔고, 그 과정을 기록합니다 — AI로 디지털 상품을 만들어 파는
   1인 작업실의 실전 노트. 부업·AI 활용·해외 정산까지.
 lang: ko
+timezone: Asia/Seoul
 url: "https://aijhmin1031-eng.github.io"
 baseurl: ""
 theme: minima

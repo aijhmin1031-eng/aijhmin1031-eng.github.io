@@ -3,6 +3,8 @@ layout: post
 title: "AI로 부업을 시작하기 전에 알아야 할 3가지 현실"
 date: 2026-08-21 10:30:00 +0900
 lang: ko
+starter: true
+starter_order: 4
 image: /assets/ai-sidejob-reality.jpg
 categories: AI부업
 ---

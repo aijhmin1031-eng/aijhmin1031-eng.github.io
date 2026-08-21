@@ -1,0 +1,33 @@
+---
+layout: page
+title: 소개
+permalink: /about/
+---
+
+## 소소 부업 연구소는
+
+평범한 직장인이 **디지털 부업을 직접 실험하고 기록하는 블로그**입니다.
+
+- 디지털 디자인 파일(클립아트·템플릿·캘리그라피)을 만들어 해외 플랫폼에 판매하고,
+- AI 이미지 생성 도구를 실무 공정에 붙여 쓰고,
+- Etsy·Payhip 같은 판매 채널과 PayPal·Payoneer 같은 해외 정산 수단을
+  하나씩 개설하며 겪은 일을 씁니다.
+
+성공담만 골라 쓰지 않습니다. 심사에서 막힌 이야기, 잘못 만들어 갈아엎은 이야기도
+그대로 기록합니다. 그게 다음에 시작하는 분들께 진짜 유용한 정보라고 믿기 때문입니다.
+
+## About (English)
+
+SOSO Side-Hustle Lab is a hands-on blog about **digital side hustles with zero
+upfront capital** — selling digital design files (clipart, templates,
+calligraphy) on global platforms, using AI image tools in a real production
+pipeline, and setting up cross-border payout accounts like PayPal and Payoneer.
+
+We publish what actually happened, including the failures — because that is
+what is genuinely useful to the next person starting out.
+
+## 이 블로그의 원칙
+
+1. **직접 해본 것만 쓴다** — 검색해서 짜깁기한 정보는 올리지 않습니다.
+2. **비용·수수료를 숫자로 쓴다** — "저렴해요"가 아니라 실제 요율을 적습니다.
+3. **AI 사용을 공개한다** — AI로 만든 이미지·글에는 그 사실을 밝힙니다.

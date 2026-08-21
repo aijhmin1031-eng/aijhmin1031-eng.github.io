@@ -42,13 +42,21 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     targets.forEach(function (el) { io.observe(el); });
 
-    /* 첫 화면에 이미 보이는 요소는 즉시 (관찰 지연으로 깜빡이는 것 방지) */
-    requestAnimationFrame(function () {
+    /* 첫 화면 + 빠른 스크롤로 지나친 요소를 놓치지 않는 스윕 폴백 */
+    var sweep = function () {
       targets.forEach(function (el) {
+        if (el.classList.contains('in')) return;
         var r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.92) { el.classList.add('in'); io.unobserve(el); }
+        if (r.top < window.innerHeight * 0.96) { el.classList.add('in'); io.unobserve(el); }
       });
-    });
+    };
+    requestAnimationFrame(sweep);
+    var sweepTick = null;
+    window.addEventListener('scroll', function () {
+      if (sweepTick) return;
+      sweepTick = setTimeout(function () { sweepTick = null; sweep(); }, 120);
+    }, { passive: true });
+    window.addEventListener('load', sweep);
   }
 
   /* 2) 글 읽기 진행 막대 */

@@ -202,6 +202,7 @@ table th, table td { border: 1px solid #EAE2D8; }
 @media (max-width: 600px) {
   .story-row, .story-row.reverse { flex-direction: column; text-align: center; gap: 14px; }
   .story-row img { width: 150px; flex: none; }
+  .js-anim .story-row.reveal, .js-anim .story-row.reverse.reveal { transform: translateY(16px); }
 }
 .latest-sub { color: #9b8f86; font-size: .92rem; margin: 4px 0 0; }
 
@@ -238,6 +239,10 @@ table th, table td { border: 1px solid #EAE2D8; }
 /* 현재 페이지 표시 */
 .site-nav .page-link.active { color: #BA626A; font-weight: 700; border-bottom: 2px solid #BA626A; }
 .site-nav .nav-shop.active { border-bottom: none; }
+
+/* 애니메이션 대기 위치가 화면 밖으로 삐져나가지 않게 봉쇄 (모바일 가로 흔들림 방지) */
+html, body { overflow-x: clip; }
+.story { overflow-x: clip; }
 
 /* ═══════════════ 애니메이션 시스템 ═══════════════
    브랜드 문법: 리스팅 비디오의 "빌드업 팝인" — 요소가 하나씩 살짝 튀어오르며 등장 */

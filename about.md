@@ -4,9 +4,9 @@ title: 소개
 permalink: /about/
 ---
 
-## 소소 부업 연구소는
+## 소소의 작업실는
 
-![소소 부업 연구소 마스코트 소소 — 책상에서 연필로 기록하는 다람쥐 수채화]({{ "/assets/brand/profile_blog.jpg" | relative_url }}){: style="max-width:340px; display:block; margin:0 auto;"}
+![소소의 작업실 마스코트 소소 — 책상에서 연필로 기록하는 다람쥐 수채화]({{ "/assets/brand/profile_blog.jpg" | relative_url }}){: style="max-width:340px; display:block; margin:0 auto;"}
 
 평범한 직장인이 **디지털 부업을 직접 실험하고 기록하는 블로그**입니다.
 

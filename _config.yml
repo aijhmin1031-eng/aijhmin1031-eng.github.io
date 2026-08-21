@@ -1,4 +1,4 @@
-title: 소소 부업 연구소
+title: 소소의 작업실
 description: >-
   디지털 파일 판매·AI 활용·해외 플랫폼 정산까지 —
   무자본 디지털 부업을 직접 해보며 기록하는 실전 노트.
@@ -6,7 +6,7 @@ lang: ko
 url: "https://aijhmin1031-eng.github.io"
 baseurl: ""
 theme: minima
-author: 소소 부업 연구소
+author: 소소의 작업실
 logo: /assets/brand/profile_blog.jpg
 
 header_pages:

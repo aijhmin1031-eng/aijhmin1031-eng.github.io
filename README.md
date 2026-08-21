@@ -1,4 +1,4 @@
-# 소소 부업 연구소 — SOSO Side-Hustle Lab
+# 소소의 작업실 — SOSO's Atelier
 
 디지털 부업 노하우 블로그 (한국어+영어). GitHub Pages(Jekyll)로 호스팅,
 목표는 유용한 콘텐츠 축적 + Google AdSense 수익화.

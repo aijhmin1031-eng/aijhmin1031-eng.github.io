@@ -128,3 +128,134 @@
     wrap.appendChild(a);
   });
 })();
+
+/* ── 글 모아보기: 검색 + 카테고리 필터 ───────────────────────── */
+(function () {
+  'use strict';
+  var root = document.querySelector('.post-index');
+  if (!root) return;
+
+  var q = document.getElementById('pi-q');
+  var countEl = document.getElementById('pi-count');
+  var emptyEl = document.getElementById('pi-empty');
+  var chips = [].slice.call(root.querySelectorAll('.pi-chip'));
+  var items = [].slice.call(root.querySelectorAll('.pi-item'));
+  var years = [].slice.call(root.querySelectorAll('.pi-year'));
+  var cat = '';
+
+  function norm(s) { return (s || '').toLowerCase().replace(/\s+/g, ' '); }
+
+  function apply() {
+    var term = norm(q ? q.value : '');
+    var shown = 0;
+    items.forEach(function (li) {
+      var okCat = !cat || (' ' + li.dataset.cat + ' ').indexOf(' ' + cat + ' ') > -1;
+      var okTerm = !term || norm(li.dataset.text).indexOf(term) > -1;
+      var on = okCat && okTerm;
+      li.hidden = !on;
+      if (on) shown++;
+    });
+    years.forEach(function (sec) {
+      sec.hidden = !sec.querySelector('.pi-item:not([hidden])');
+    });
+    if (countEl) countEl.textContent = shown + '편';
+    if (emptyEl) emptyEl.hidden = shown !== 0;
+  }
+
+  if (q) {
+    var t = null;
+    q.addEventListener('input', function () {
+      clearTimeout(t); t = setTimeout(apply, 120);
+    });
+  }
+  chips.forEach(function (b) {
+    b.addEventListener('click', function () {
+      chips.forEach(function (x) { x.classList.remove('is-on'); });
+      b.classList.add('is-on');
+      cat = b.dataset.cat || '';
+      apply();
+    });
+  });
+
+  /* 주소에 #카테고리 가 있으면 그 카테고리로 시작 */
+  if (location.hash.length > 1) {
+    var want = decodeURIComponent(location.hash.slice(1));
+    var hit = chips.filter(function (b) { return b.dataset.cat === want; })[0];
+    if (hit) hit.click();
+  }
+  apply();
+})();
+
+/* ── 글 목차 (소제목 3개 이상일 때만) ─────────────────────────── */
+(function () {
+  'use strict';
+  var content = document.querySelector('.post-content');
+  if (!content) return;
+  var hs = [].slice.call(content.querySelectorAll('h2, h3'));
+  if (hs.length < 3) return;
+
+  var box = document.createElement('nav');
+  box.className = 'toc';
+  var html = '<button class="toc-toggle" aria-expanded="true">📑 이 글의 목차</button><ol class="toc-list">';
+  hs.forEach(function (h, i) {
+    if (!h.id) h.id = 'sec-' + i;
+    html += '<li class="toc-' + h.tagName.toLowerCase() + '"><a href="#' + h.id + '">' +
+            h.textContent.trim() + '</a></li>';
+  });
+  box.innerHTML = html + '</ol>';
+  content.insertBefore(box, content.firstChild);
+
+  var btn = box.querySelector('.toc-toggle');
+  btn.addEventListener('click', function () {
+    var open = box.classList.toggle('collapsed');
+    btn.setAttribute('aria-expanded', String(!open));
+  });
+
+  /* 읽는 위치 표시 */
+  var links = [].slice.call(box.querySelectorAll('a'));
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+    hs.forEach(function (h) { spy.observe(h); });
+  }
+})();
+
+/* ── 스티키 헤더: 스크롤하면 압축 + 글 제목 표시 ──────────────── */
+(function () {
+  'use strict';
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  var wrap = header.querySelector('.wrapper');
+  var h1 = document.querySelector('.post-title');
+
+  var titleEl = null;
+  if (h1 && wrap) {
+    titleEl = document.createElement('span');
+    titleEl.className = 'header-post-title';
+    titleEl.textContent = h1.textContent.trim();
+    wrap.insertBefore(titleEl, wrap.querySelector('.site-nav'));
+  }
+
+  var lastCompact = null;
+  function onScroll() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    var compact = y > 120;
+    if (compact !== lastCompact) {
+      header.classList.toggle('compact', compact);
+      lastCompact = compact;
+    }
+    if (titleEl) {
+      var past = h1.getBoundingClientRect().bottom < 56;
+      header.classList.toggle('show-title', past);
+    }
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+})();

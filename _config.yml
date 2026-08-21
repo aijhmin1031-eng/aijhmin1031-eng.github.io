@@ -11,10 +11,10 @@ author: 소소의 작업실
 logo: /assets/brand/profile_blog.jpg
 
 header_pages:
+  - posts.md
   - about.md
   - shop.md
   - freebies.md
-  - privacy.md
   - contact.md
 
 permalink: /post/:title/

@@ -4,7 +4,7 @@
 목표는 유용한 콘텐츠 축적 + Google AdSense 수익화.
 
 - 사이트: https://aijhmin1031-eng.github.io/
-- 기획·운영 문서: `docs/운영계획.md` (Drive `SOSO_부업연구소_블로그` 폴더에 사본)
+- 기획·운영 문서: `docs/운영계획.md` (Drive `SOSO_작업실_블로그` 폴더에 사본)
 
 ## 글 쓰는 법
 

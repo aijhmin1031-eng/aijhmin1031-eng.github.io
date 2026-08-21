@@ -147,7 +147,7 @@ table th, table td { border: 1px solid #EAE2D8; }
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .shop-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(186,98,106,.20); }
-.shop-cta-img { width: 118px; flex: 0 0 118px; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+.shop-cta-img { width: 76px; flex: 0 0 76px; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
 .shop-cta-body { display: block; }
 .shop-cta-kicker {
   display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .06em;
@@ -165,7 +165,7 @@ table th, table td { border: 1px solid #EAE2D8; }
 .shop-cta:hover .shop-cta-btn { background: #a5545c; }
 @media (max-width: 520px) {
   .shop-cta { flex-direction: column; text-align: center; gap: 10px; }
-  .shop-cta-img { width: 96px; flex: none; }
+  .shop-cta-img { width: 64px; flex: none; }
 }
 
 /* 작은 유도 링크 */
@@ -234,3 +234,7 @@ table th, table td { border: 1px solid #EAE2D8; }
 .starter-list { margin: 0; padding-left: 22px; }
 .starter-list li { margin-bottom: 6px; font-size: .95rem; }
 .starter-list li::marker { color: #BA626A; font-weight: 700; }
+
+/* 현재 페이지 표시 */
+.site-nav .page-link.active { color: #BA626A; font-weight: 700; border-bottom: 2px solid #BA626A; }
+.site-nav .nav-shop.active { border-bottom: none; }

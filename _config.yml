@@ -1,18 +1,17 @@
 title: 소소 부업 연구소
 description: >-
-  디지털 파일 판매·AI 활용·해외 플랫폼 정산까지 — 무자본 디지털 부업을
-  직접 해보며 기록하는 실전 노트. Real-world notes on digital side hustles,
-  written in Korean and English.
+  디지털 파일 판매·AI 활용·해외 플랫폼 정산까지 —
+  무자본 디지털 부업을 직접 해보며 기록하는 실전 노트.
 lang: ko
 url: "https://aijhmin1031-eng.github.io"
 baseurl: ""
 theme: minima
 author:
   name: SOSO Side-Hustle Lab
+logo: /assets/brand/profile_blog.jpg
 
 header_pages:
   - about.md
-  - en.md
   - privacy.md
   - contact.md
 
@@ -30,6 +29,7 @@ plugins:
 exclude:
   - docs/
   - README.md
+  - _unpublished_en/
 
 # 검색엔진 소유 확인 (jekyll-seo-tag가 meta 태그로 출력)
 webmaster_verifications:

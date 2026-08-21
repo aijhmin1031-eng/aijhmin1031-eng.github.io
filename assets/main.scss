@@ -1,0 +1,59 @@
+---
+---
+$base-font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+$base-font-size: 16.5px;
+$base-line-height: 1.75;
+$text-color: #3E322E;
+$brand-color: #BA626A;
+$background-color: #FDFBF8;
+
+@import "minima";
+
+h1, h2, h3, h4, h5, h6, .site-title, .post-title {
+  font-family: "Gowun Batang", "NanumMyeongjo", serif;
+  font-weight: 700;
+  color: #3E322E;
+}
+
+.site-title, .site-title:visited {
+  color: #3E322E;
+  letter-spacing: 0.02em;
+}
+
+.site-header {
+  border-top: 4px solid #BA626A;
+  border-bottom: 1px solid #EAE2D8;
+  background: #FAF7F2;
+}
+
+a { color: #BA626A; }
+a:visited { color: #a5545c; }
+a:hover { color: #8d454c; }
+
+.post-content img, .home img {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(62, 50, 46, 0.10);
+  margin: 8px 0;
+}
+
+.post-link {
+  font-family: "Gowun Batang", "NanumMyeongjo", serif;
+  font-size: 1.35rem;
+}
+
+.post-meta { color: #9b8f86; }
+
+blockquote {
+  color: #6f635b;
+  border-left: 4px solid #E9C9CC;
+  background: #FAF7F2;
+  padding: 12px 20px;
+  border-radius: 0 8px 8px 0;
+  font-style: normal;
+}
+
+table { border-collapse: collapse; }
+table th { background: #FAF7F2; color: #3E322E; }
+table th, table td { border: 1px solid #EAE2D8; }
+
+.site-footer { background: #FAF7F2; border-top: 1px solid #EAE2D8; }

@@ -6,6 +6,8 @@ permalink: /about/
 
 ## 소소 부업 연구소는
 
+![소소 부업 연구소 마스코트 소소 — 책상에서 연필로 기록하는 다람쥐 수채화]({{ "/assets/brand/profile_blog.jpg" | relative_url }}){: style="max-width:340px; display:block; margin:0 auto;"}
+
 평범한 직장인이 **디지털 부업을 직접 실험하고 기록하는 블로그**입니다.
 
 - 디지털 디자인 파일(클립아트·템플릿·캘리그라피)을 만들어 해외 플랫폼에 판매하고,
@@ -15,16 +17,6 @@ permalink: /about/
 
 성공담만 골라 쓰지 않습니다. 심사에서 막힌 이야기, 잘못 만들어 갈아엎은 이야기도
 그대로 기록합니다. 그게 다음에 시작하는 분들께 진짜 유용한 정보라고 믿기 때문입니다.
-
-## About (English)
-
-SOSO Side-Hustle Lab is a hands-on blog about **digital side hustles with zero
-upfront capital** — selling digital design files (clipart, templates,
-calligraphy) on global platforms, using AI image tools in a real production
-pipeline, and setting up cross-border payout accounts like PayPal and Payoneer.
-
-We publish what actually happened, including the failures — because that is
-what is genuinely useful to the next person starting out.
 
 ## 이 블로그의 원칙
 

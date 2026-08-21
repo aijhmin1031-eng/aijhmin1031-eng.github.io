@@ -33,21 +33,3 @@ _최종 수정: 2026-08-21_
 개인정보 관련 문의는 [문의 페이지](/contact/)를 통해 연락해
 주세요.
 
----
-
-## Privacy Policy (English)
-
-This blog does not directly collect personal information from visitors.
-Third-party services below may use cookies and similar technologies.
-
-**Advertising (Google AdSense).** Third-party vendors, including Google, use
-cookies to serve ads based on a user's prior visits to this website or other
-websites. Google's use of advertising cookies enables it and its partners to
-serve ads based on visits to this site and/or other sites on the Internet.
-Users may opt out of personalized advertising by visiting
-[Google Ads Settings](https://adssettings.google.com).
-
-**Analytics.** Cookie-based analytics tools may be used to understand
-aggregate, non-identifying visitor statistics.
-
-For privacy inquiries, please use the [contact page](/contact/).

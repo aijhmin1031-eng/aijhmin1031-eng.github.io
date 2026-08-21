@@ -95,3 +95,36 @@
     }
   });
 })();
+
+/* ── Pinterest 저장 버튼 — 본문 이미지 위에 얹기 ───────────────── */
+(function () {
+  'use strict';
+  var imgs = document.querySelectorAll('.post-content img, .home .story-row img, .product-img img');
+  if (!imgs.length) return;
+  var pageUrl = location.href;
+
+  Array.prototype.forEach.call(imgs, function (img) {
+    if (img.closest('.pin-wrap') || img.closest('.pc-thumb') || img.closest('.shop-cta')) return;
+    var src = img.currentSrc || img.src;
+    if (!src) return;
+
+    var wrap = document.createElement('span');
+    wrap.className = 'pin-wrap';
+    img.parentNode.insertBefore(wrap, img);
+    wrap.appendChild(img);
+
+    var a = document.createElement('a');
+    a.className = 'pin-save';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.title = 'Pinterest에 저장';
+    a.setAttribute('aria-label', 'Pinterest에 저장');
+    a.href = 'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(pageUrl) +
+             '&media=' + encodeURIComponent(src) +
+             '&description=' + encodeURIComponent(img.alt || document.title);
+    a.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">' +
+      '<path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.4 7.6 11.2-.1-.9-.2-2.4 0-3.4l1.4-5.9s-.3-.7-.3-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4.1-.3 1.2.6 2.2 1.8 2.2 2.2 0 3.8-2.3 3.8-5.6 0-2.9-2.1-5-5.1-5-3.5 0-5.5 2.6-5.5 5.3 0 1 .4 2.2.9 2.8.1.1.1.2.1.3l-.3 1.3c0 .2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.7 0-3.8 2.8-7.4 8-7.4 4.2 0 7.5 3 7.5 7 0 4.2-2.6 7.5-6.3 7.5-1.2 0-2.4-.6-2.8-1.4l-.8 2.9c-.3 1.1-1 2.5-1.6 3.4 1.2.4 2.4.6 3.7.6 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>' +
+      '<span>저장</span>';
+    wrap.appendChild(a);
+  });
+})();

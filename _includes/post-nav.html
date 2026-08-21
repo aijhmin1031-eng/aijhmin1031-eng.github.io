@@ -1,0 +1,50 @@
+{%- assign rel = "" | split: "" -%}
+{%- assign cat = page.categories | first -%}
+{%- for p in site.posts -%}
+  {%- if p.url != page.url and p.categories contains cat -%}
+    {%- assign rel = rel | push: p -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if rel.size < 3 -%}
+  {%- for p in site.posts -%}
+    {%- unless p.url == page.url or rel contains p -%}
+      {%- assign rel = rel | push: p -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- assign rel3 = rel | slice: 0, 3 -%}
+
+{%- if rel3.size > 0 -%}
+<section class="related">
+  <h2 class="related-heading">이어서 읽어보세요</h2>
+  <div class="post-cards">
+    {%- for p in rel3 -%}
+    <a class="post-card" href="{{ p.url | relative_url }}">
+      {%- if p.image -%}
+      <div class="pc-thumb"><img src="{{ p.image | relative_url }}" alt="{{ p.title | escape }}" loading="lazy"></div>
+      {%- endif -%}
+      <div class="pc-body">
+        {%- if p.categories.size > 0 -%}<span class="pc-cat">{{ p.categories | first }}</span>{%- endif -%}
+        <h3 class="pc-title">{{ p.title | escape }}</h3>
+        <span class="pc-date">{{ p.date | date: "%Y-%m-%d" }}</span>
+      </div>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+<nav class="post-prevnext">
+  {%- if page.previous -%}
+  <a class="pn pn-prev" href="{{ page.previous.url | relative_url }}">
+    <span class="pn-label">← 이전 글</span>
+    <span class="pn-title">{{ page.previous.title | escape }}</span>
+  </a>
+  {%- endif -%}
+  {%- if page.next -%}
+  <a class="pn pn-next" href="{{ page.next.url | relative_url }}">
+    <span class="pn-label">다음 글 →</span>
+    <span class="pn-title">{{ page.next.title | escape }}</span>
+  </a>
+  {%- endif -%}
+</nav>

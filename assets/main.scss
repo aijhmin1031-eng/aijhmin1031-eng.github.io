@@ -238,3 +238,108 @@ table th, table td { border: 1px solid #EAE2D8; }
 /* 현재 페이지 표시 */
 .site-nav .page-link.active { color: #BA626A; font-weight: 700; border-bottom: 2px solid #BA626A; }
 .site-nav .nav-shop.active { border-bottom: none; }
+
+/* ═══════════════ 애니메이션 시스템 ═══════════════
+   브랜드 문법: 리스팅 비디오의 "빌드업 팝인" — 요소가 하나씩 살짝 튀어오르며 등장 */
+
+$pop: cubic-bezier(.22,.98,.36,1.02);   /* 살짝 오버슈트 */
+$soft: cubic-bezier(.25,.46,.45,.94);
+
+/* 자바스크립트가 켜졌을 때만 숨김 — JS 없으면 그냥 다 보임 */
+.js-anim .reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(.985);
+  transition: opacity .62s $soft var(--d, 0ms), transform .62s $pop var(--d, 0ms);
+  will-change: opacity, transform;
+}
+.js-anim .reveal.in { opacity: 1; transform: none; }
+
+/* 스토리 행은 좌우에서 스며들 듯 */
+.js-anim .story-row.reveal { transform: translateX(-22px); }
+.js-anim .story-row.reverse.reveal { transform: translateX(22px); }
+.js-anim .story-row.reveal.in { transform: none; }
+
+/* 무료나눔 아이템은 팝 느낌 강하게 */
+.js-anim .fb-item.reveal { transform: translateY(14px) scale(.9); }
+.js-anim .fb-item.reveal.in { transform: none; }
+
+/* 접근성: 모션 최소화 설정이면 전부 끔 */
+.reduce-motion .reveal { opacity: 1 !important; transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* 배너 — 로드되며 부드럽게 떠오름 */
+@keyframes soso-rise {
+  from { opacity: 0; transform: translateY(14px) scale(.99); }
+  to   { opacity: 1; transform: none; }
+}
+.home > p:first-of-type img, .home img:first-of-type {
+  animation: soso-rise .85s $pop both;
+}
+
+/* 카드 호버 — 이미지가 살짝 확대 */
+.post-card { transition: transform .22s $pop, box-shadow .22s $soft; }
+.pc-thumb img { transition: transform .5s $soft; }
+.post-card:hover .pc-thumb img { transform: scale(1.06); }
+.post-card:hover { transform: translateY(-6px); }
+
+/* 무료나눔 썸네일 호버 — 살짝 커지고 그림자 */
+.fb-preview { transition: transform .22s $pop, box-shadow .22s $soft; }
+.fb-preview:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 20px rgba(62,50,46,.14); }
+.fb-preview img { transition: transform .45s $soft; }
+.fb-preview:hover img { transform: scale(1.05); }
+
+/* 상점 버튼 — 지나가는 윤기 (은은하게, 3초마다) */
+.shop-cta-btn { position: relative; overflow: hidden; }
+.shop-cta-btn::after {
+  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.42), transparent);
+  transform: skewX(-18deg); animation: soso-shine 3.6s ease-in-out infinite;
+}
+@keyframes soso-shine {
+  0%, 62% { left: -60%; }
+  86%, 100% { left: 120%; }
+}
+
+/* 다운로드 버튼 — 누르면 눌리는 느낌 */
+.fb-dl { transition: transform .14s $pop, background .18s ease; }
+.fb-dl:hover { transform: translateY(-2px); }
+.fb-dl:active { transform: translateY(0) scale(.97); }
+
+/* 라이트박스 — 페이드 + 확대 등장 */
+.fb-lightbox { animation: soso-fade .24s ease both; }
+.fb-lightbox img { animation: soso-zoom .34s cubic-bezier(.22,.98,.36,1.02) both; }
+@keyframes soso-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes soso-zoom { from { opacity: 0; transform: scale(.92) translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* 헤더 — 스크롤 시 떠 있는 느낌 */
+.site-header { transition: box-shadow .25s $soft, background .25s $soft; }
+.site-header.scrolled { box-shadow: 0 2px 14px rgba(62,50,46,.10); }
+.site-nav .page-link { transition: color .18s ease; }
+
+/* 글 읽기 진행 막대 */
+.read-bar {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1000;
+  background: transparent; pointer-events: none;
+}
+.read-bar span {
+  display: block; height: 100%; transform-origin: 0 50%; transform: scaleX(0);
+  background: linear-gradient(90deg, #E9C9CC, #BA626A);
+  transition: transform .08s linear;
+}
+
+/* 무료나눔 회차 배지 — 새 회차 강조용 은은한 맥동 */
+.drop-head:first-of-type .drop-vol { animation: soso-pulse 2.6s ease-in-out infinite; }
+@keyframes soso-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(186,98,106,.34); }
+  55% { box-shadow: 0 0 0 8px rgba(186,98,106,0); }
+}
+
+/* 링크 밑줄이 좌→우로 그려지는 효과 (본문 링크) */
+.post-content a:not(.fb-dl):not(.shop-cta):not(.mini-cta), .page-content .story a {
+  background-image: linear-gradient(#BA626A, #BA626A);
+  background-size: 0% 1.5px; background-repeat: no-repeat; background-position: 0 100%;
+  transition: background-size .32s $soft; text-decoration: none;
+}
+.post-content a:not(.fb-dl):not(.shop-cta):not(.mini-cta):hover { background-size: 100% 1.5px; }

@@ -799,3 +799,9 @@ table tr:nth-child(even) { background: #FBF8F4; }
 
 .page-content { padding-top: 26px; }
 .post-meta { font-size: .86rem; letter-spacing: 0; }
+
+/* 테마 기본 막대 무력화 — 우리 원칙: 선으로 강조하지 않는다 */
+.site-header { border-top: none; border-bottom: none; }
+.site-footer { border-top: none; }
+blockquote { border-left: none; padding-left: 24px; letter-spacing: -.003em; font-size: 1rem; }
+pre, code { border: none; background: #F6F1EA; }

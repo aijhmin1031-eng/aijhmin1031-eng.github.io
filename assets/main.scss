@@ -96,3 +96,44 @@ table th, table td { border: 1px solid #EAE2D8; }
 .sf-desc { color: #9b8f86; font-size: .9rem; }
 .sf-links { font-size: .9rem; }
 .sf-note { color: #b3a89f; font-size: .78rem; margin-top: 10px; }
+
+/* --- 무료나눔 갤러리 --- */
+.freebie-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 18px; margin: 24px 0 10px;
+}
+.fb-item { text-align: center; }
+.fb-preview {
+  display: block; position: relative; border: 1px solid #EAE2D8; border-radius: 12px;
+  overflow: hidden; background: #FAF7F2;
+}
+.fb-preview img { width: 100%; display: block; border-radius: 0; box-shadow: none; margin: 0; }
+.fb-zoom {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 6px 0;
+  font-size: .78rem; color: #fff; background: rgba(62,50,46,.62); opacity: 0;
+  transition: opacity .15s ease;
+}
+.fb-preview:hover .fb-zoom { opacity: 1; }
+.fb-name { margin: 8px 0 6px; font-size: .92rem; color: #3E322E; font-weight: 700; }
+.fb-dl {
+  display: inline-block; padding: 7px 16px; border-radius: 999px; font-size: .84rem;
+  font-weight: 700; background: #BA626A; color: #fff !important; text-decoration: none;
+}
+.fb-dl:hover { background: #a5545c; text-decoration: none; }
+.fb-all { margin-top: 18px; font-size: .95rem; color: #6f635b; }
+
+/* 라이트박스 (CSS만, :target) */
+.fb-lightbox {
+  display: none; position: fixed; inset: 0; z-index: 999; background: rgba(62,50,46,.86);
+  text-align: center; padding: 4vh 4vw; overflow: auto;
+}
+.fb-lightbox:target { display: block; }
+.fb-lightbox img {
+  max-width: min(92vw, 620px); max-height: 72vh; border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35); margin: 0 0 16px;
+}
+.fb-close {
+  display: block; text-align: right; color: #fff !important; font-size: .95rem;
+  text-decoration: none; margin-bottom: 10px;
+}
+.fb-lightbox .fb-dl { display: inline-block; }

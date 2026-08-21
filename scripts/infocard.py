@@ -27,7 +27,6 @@ def make_cards(title, items, out, w=1100, sub=None):
     f_n = ImageFont.truetype(KR_B, 40)
     tw = d.textlength(title, font=f_t)
     d.text(((w-tw)//2, 44), title, font=f_t, fill=INK)
-    d.rectangle([(w-120)//2, 116, (w+120)//2, 120], fill=BLUSH)
     if sub:
         sw = d.textlength(sub, font=f_sub)
         d.text(((w-sw)//2, 138), sub, font=f_sub, fill=SUB)
@@ -37,7 +36,6 @@ def make_cards(title, items, out, w=1100, sub=None):
         l2 = it[3] if len(it) > 3 else ""
         col = BLUSH if i % 2 == 0 else SAGE
         d.rounded_rectangle([40, y, w-40, y+ch], radius=18, fill=CARD, outline=LINE, width=2)
-        d.rounded_rectangle([40, y, 52, y+ch], radius=6, fill=col)
         cx, cy = 118, y + ch//2
         d.ellipse([cx-34, cy-34, cx+34, cy+34], fill=col)
         d.text((cx, cy-3), num, font=f_n, fill=(255,255,255), anchor="mm")

@@ -29,7 +29,6 @@ def draw_frame(title, steps, appear, title_a):
     tc = tuple(int(CREAM[i] + (INK[i]-CREAM[i]) * title_a) for i in range(3))
     tw = d.textlength(title, font=ft)
     d.text(((W-tw)//2, 42), title, font=ft, fill=tc)
-    d.rectangle([W//2-40, 92, W//2+40, 95], fill=tuple(int(CREAM[i]+(BLUSH[i]-CREAM[i])*title_a) for i in range(3)))
     # 카드 4장: 고정 그리드 (x centers), 카드 160x210
     cw, ch, cy = 168, 220, 260
     xs = [110, 303, 496, 689]

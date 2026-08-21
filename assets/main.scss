@@ -21,7 +21,6 @@ h1, h2, h3, h4, h5, h6, .site-title, .post-title {
 }
 
 .site-header {
-  border-bottom: 1px solid #EFE7DD;
   background: #FAF7F2;
 }
 
@@ -55,7 +54,7 @@ table { border-collapse: collapse; }
 table th { background: #FAF7F2; color: #3E322E; }
 table th, table td { border: 1px solid #EAE2D8; }
 
-.site-footer { background: #FAF7F2; border-top: 1px solid #EAE2D8; }
+.site-footer { background: #FAF7F2; margin-top: 52px; }
 
 /* --- 홈 카드 그리드 --- */
 .latest-heading { margin-top: 54px; }
@@ -759,3 +758,44 @@ $soft: cubic-bezier(.25,.46,.45,.94);
   .lp-hero-soso { width: 132px; }
   .lp-btn { width: 100%; }
 }
+
+
+/* ═══════════ 한글 타이포그래피 ═══════════
+   원칙: 막대·선으로 강조하지 않는다. 크기·굵기·색·여백으로만. */
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-size: 17px; line-height: 1.85; letter-spacing: -.003em;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+/* 한글은 단어 중간에서 줄바꿈하지 않는다 — 가독성 핵심 */
+body, p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, figcaption,
+.pc-title, .pi-title, .product-desc, .lp-lead, .lp-h1, .lp-h2 {
+  word-break: keep-all; overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4 { letter-spacing: -.022em; line-height: 1.45; }
+.post-title {
+  font-size: clamp(1.75rem, 5.4vw, 2.5rem); line-height: 1.38;
+  letter-spacing: -.032em; margin-bottom: 10px;
+}
+.post-content h2 {
+  font-size: clamp(1.3rem, 3.6vw, 1.62rem); margin-top: 2.4em; margin-bottom: .7em;
+}
+.post-content h3 {
+  font-size: clamp(1.1rem, 3vw, 1.24rem); margin-top: 1.9em; margin-bottom: .55em;
+}
+.post-content p { margin-bottom: 1.5em; }
+.post-content ul, .post-content ol { margin-bottom: 1.6em; }
+.post-content li { margin-bottom: .5em; }
+.post-content strong { font-weight: 700; color: #2f2622; }
+
+/* 표는 선 대신 배경 줄무늬로 */
+table { border: none !important; font-size: .94rem; }
+table th, table td { border: none !important; padding: 12px 14px; }
+table th { background: #F3EDE4; font-weight: 700; }
+table tr:nth-child(even) { background: #FBF8F4; }
+
+.page-content { padding-top: 26px; }
+.post-meta { font-size: .86rem; letter-spacing: 0; }

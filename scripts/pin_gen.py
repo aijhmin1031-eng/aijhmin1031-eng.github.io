@@ -45,8 +45,6 @@ def make_pin(cover, headline, sub, meta, out_name):
     im = im.crop((0, 0, W, IMG_H))
     c.img.paste(im, (0, 0))
 
-    # 이미지 아래 구분선
-    d.rectangle([0, IMG_H-4, W, IMG_H], fill=BLUSH)
 
     # 텍스트 블록을 밴드 중앙에 배치
     f_h = pf(58, 800); f_s = pf(30, 500); f_m = pf(30, 700)

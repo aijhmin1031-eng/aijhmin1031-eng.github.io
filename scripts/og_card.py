@@ -60,7 +60,6 @@ def make(title, hero, out_path):
         c.img.paste(Image.alpha_composite(c.img.convert('RGBA'), veil).convert('RGB'), (0, 0))
 
     # 좌측 텍스트 영역
-    d.rectangle([0, 0, 12, H], fill=BLUSH)
     f_t = ImageFont.truetype(SONG, 62)
     f_s = ImageFont.truetype(KR_R, 27)
     f_v = ImageFont.truetype(VIBES, 38)
@@ -70,8 +69,7 @@ def make(title, hero, out_path):
     for i, ln in enumerate(lines):
         c.text(64, y, ln, f_t, INK, tag=f'l{i}')
         y += 84
-    d.rectangle([64, y + 14, 190, y + 19], fill=BLUSH)
-    c.text(64, y + 44, '소소의 작업실 · 만들고, 팔고, 그 과정을 기록합니다', f_s, (111, 99, 91), tag='sub')
+    c.text(64, y + 26, '소소의 작업실 · 만들고, 팔고, 그 과정을 기록합니다', f_s, (150, 108, 112), tag='sub')
 
     if os.path.exists(ACORN):
         c.image(ACORN, W - 118, H - 132, 104, tag='acorn')

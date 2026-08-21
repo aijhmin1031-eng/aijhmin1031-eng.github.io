@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="home">
+  {{ content }}
+
+  <h2 class="latest-heading">최신 글</h2>
+  <div class="post-cards">
+    {%- for post in site.posts -%}
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      {%- if post.image -%}
+      <div class="pc-thumb"><img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy"></div>
+      {%- endif -%}
+      <div class="pc-body">
+        {%- if post.categories.size > 0 -%}
+        <span class="pc-cat">{{ post.categories | first }}</span>
+        {%- endif -%}
+        <h3 class="pc-title">{{ post.title | escape }}</h3>
+        <span class="pc-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      </div>
+    </a>
+    {%- endfor -%}
+  </div>
+</div>

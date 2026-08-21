@@ -3,6 +3,7 @@ layout: post
 title: "Payhip으로 오늘 바로 여는 무료 온라인 상점 — 실제 개설기"
 date: 2026-08-21 06:30:00 +0900
 lang: ko
+image: /assets/hero_store.jpg
 categories: 판매채널
 ---
 

@@ -6,12 +6,12 @@ lang: ko
 url: "https://aijhmin1031-eng.github.io"
 baseurl: ""
 theme: minima
-author:
-  name: SOSO Side-Hustle Lab
+author: 소소 부업 연구소
 logo: /assets/brand/profile_blog.jpg
 
 header_pages:
   - about.md
+  - freebies.md
   - privacy.md
   - contact.md
 

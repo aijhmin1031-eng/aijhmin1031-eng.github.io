@@ -57,3 +57,42 @@ table th { background: #FAF7F2; color: #3E322E; }
 table th, table td { border: 1px solid #EAE2D8; }
 
 .site-footer { background: #FAF7F2; border-top: 1px solid #EAE2D8; }
+
+/* --- 홈 카드 그리드 --- */
+.latest-heading { margin-top: 40px; padding-top: 24px; border-top: 1px solid #EAE2D8; }
+.post-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px; margin-top: 18px;
+}
+.post-card {
+  display: block; background: #fff; border: 1px solid #EAE2D8; border-radius: 14px;
+  overflow: hidden; text-decoration: none; color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.post-card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(62,50,46,.12); text-decoration: none; }
+.pc-thumb { aspect-ratio: 16/10; overflow: hidden; }
+.pc-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; margin: 0; }
+.pc-body { padding: 14px 16px 16px; }
+.pc-cat {
+  display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  color: #BA626A; background: #F7E8EA; border-radius: 999px; padding: 3px 10px; margin-bottom: 8px;
+}
+.pc-title { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.45; color: #3E322E; }
+.post-card:hover .pc-title { color: #BA626A; }
+.pc-date { font-size: .8rem; color: #9b8f86; }
+
+/* --- 무료 나눔 콜아웃 --- */
+.freebie-callout {
+  display: block; background: #FAF7F2; border: 2px dashed #E9C9CC; border-radius: 14px;
+  padding: 18px 22px; margin: 26px 0; text-decoration: none; color: #3E322E;
+}
+.freebie-callout:hover { border-style: solid; text-decoration: none; }
+.freebie-callout strong { color: #BA626A; }
+
+/* --- 푸터 --- */
+.soso-footer { text-align: center; padding: 10px 0 4px; }
+.soso-footer p { margin: 4px 0; }
+.sf-brand { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.1rem; }
+.sf-desc { color: #9b8f86; font-size: .9rem; }
+.sf-links { font-size: .9rem; }
+.sf-note { color: #b3a89f; font-size: .78rem; margin-top: 10px; }

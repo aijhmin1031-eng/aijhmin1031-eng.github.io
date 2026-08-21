@@ -3,6 +3,7 @@ layout: post
 title: "디지털 파일 판매 부업, 무자본으로 시작하는 전체 지도"
 date: 2026-08-21 06:00:00 +0900
 lang: ko
+image: /assets/hero_start.jpg
 categories: 시작가이드
 ---
 

@@ -349,15 +349,48 @@ $soft: cubic-bezier(.25,.46,.45,.94);
 }
 .post-content a:not(.fb-dl):not(.shop-cta):not(.mini-cta):hover { background-size: 100% 1.5px; }
 
-/* 모바일 햄버거 메뉴 보정 — 배경·아이콘 색을 브랜드에 맞춤 */
+/* 모바일 메뉴 — minima 기본 드롭다운을 카드형으로 교체 */
 @media screen and (max-width: 600px) {
+  .site-header .wrapper { position: relative; }
+
+  /* 헤더에는 햄버거 버튼만 보이게 */
   .site-nav {
-    background-color: #FAF7F2; border: 1px solid #EAE2D8;
+    position: absolute; top: 10px; right: 15px;
+    background: transparent; border: none; text-align: right; line-height: 1;
   }
+  .site-nav label[for="nav-trigger"] {
+    width: 42px; height: 42px; border-radius: 12px;
+    background: #FAF7F2; border: 1px solid #EAE2D8;
+  }
+  .site-nav .menu-icon { width: 40px; height: 40px; padding-top: 12px; }
   .site-nav .menu-icon > svg { fill: #3E322E; }
-  .site-nav .trigger { padding-bottom: 6px; }
-  .site-nav .nav-shop { display: inline-block; margin: 6px 10px 8px; }
-  .site-nav .page-link.active { border-bottom: none; }
+
+  /* 펼쳐지는 패널 — 헤더 아래에 카드로 */
+  .site-nav input ~ .trigger { display: none; }
+  .site-nav input:checked ~ .trigger {
+    display: block; position: absolute; top: 52px; right: 0;
+    min-width: 210px; padding: 8px 0; text-align: left; z-index: 200;
+    background: #fff; border: 1px solid #EAE2D8; border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(62,50,46,.18);
+    animation: soso-menu-in .18s cubic-bezier(.22,.98,.36,1.02) both;
+  }
+  .site-nav .page-link {
+    display: block; margin: 0; padding: 12px 18px; white-space: nowrap;
+    font-size: .98rem; border-bottom: none;
+  }
+  .site-nav .page-link:not(:last-child) { margin-right: 0; }
+  .site-nav .page-link.active {
+    background: #FAF7F2; color: #BA626A; font-weight: 700; border-bottom: none;
+  }
+  .site-nav .nav-shop {
+    display: block; margin: 8px 12px 4px; padding: 11px 16px !important;
+    text-align: center; border-radius: 999px;
+  }
+  .site-title { font-size: 1.32rem; line-height: 62px; }
+}
+@keyframes soso-menu-in {
+  from { opacity: 0; transform: translateY(-8px) scale(.97); }
+  to   { opacity: 1; transform: none; }
 }
 
 /* --- 상품 페이지 --- */

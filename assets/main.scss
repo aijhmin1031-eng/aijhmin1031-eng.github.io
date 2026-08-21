@@ -503,7 +503,8 @@ $soft: cubic-bezier(.25,.46,.45,.94);
 }
 .site-header.show-title .header-post-title { opacity: 1; transform: none; }
 /* 제목이 나오면 브랜드명은 도토리만 남겨 자리 확보 */
-.site-header.show-title .site-title { max-width: 42px; overflow: hidden; white-space: nowrap; }
+.site-header.show-title .brand-text { display: none; }
+.site-title .brand-text { transition: opacity .2s ease; }
 @media (max-width: 600px) {
   .header-post-title { font-size: .86rem; margin-right: 52px; }
   .site-header.compact .site-title { line-height: 52px; }

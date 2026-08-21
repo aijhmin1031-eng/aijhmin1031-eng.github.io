@@ -348,3 +348,14 @@ $soft: cubic-bezier(.25,.46,.45,.94);
   transition: background-size .32s $soft; text-decoration: none;
 }
 .post-content a:not(.fb-dl):not(.shop-cta):not(.mini-cta):hover { background-size: 100% 1.5px; }
+
+/* 모바일 햄버거 메뉴 보정 — 배경·아이콘 색을 브랜드에 맞춤 */
+@media screen and (max-width: 600px) {
+  .site-nav {
+    background-color: #FAF7F2; border: 1px solid #EAE2D8;
+  }
+  .site-nav .menu-icon > svg { fill: #3E322E; }
+  .site-nav .trigger { padding-bottom: 6px; }
+  .site-nav .nav-shop { display: inline-block; margin: 6px 10px 8px; }
+  .site-nav .page-link.active { border-bottom: none; }
+}

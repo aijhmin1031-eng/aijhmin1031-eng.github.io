@@ -65,6 +65,11 @@
 - `_config.yml`의 `exclude`에서 `CLAUDE.md`·`docs/`·`scripts/`·`_unpublished_en/`를 **절대 빼지 말 것**
   (내부 문서가 공개 사이트에 노출되고 사이트맵에 실림 — 2026-08-21 실제 사고).
 - 글 URL은 `permalink: /post/:title/` — 한글 카테고리가 URL에 들어가지 않게 유지.
+- 캐릭터소스(`판매패키지/브랜드/캐릭터소스/`)의 PNG는 **이미 투명**이다 — transparentize를
+  다시 돌리면 투명영역이 검정으로 변한다(2026-08-21 스토리·상점CTA 실제 사고). 원본 알파를
+  그대로 쓰고, JPG로 만들 땐 크림 배경에 alpha_composite 한다.
+- `_includes/header.html`의 모바일 햄버거(nav-trigger 체크박스+menu-icon) 구조를 지우지 말 것 —
+  없으면 폰에서 메뉴가 펼쳐진 채 콘텐츠를 덮는다(실제 사고).
 - 새 페이지/글 배포 후에는 `curl`로 사이트맵을 확인해 **의도한 URL만** 실려 있는지 점검한다.
 
 ## 브랜드

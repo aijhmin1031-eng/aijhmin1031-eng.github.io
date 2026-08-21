@@ -30,8 +30,8 @@ permalink: /posts/
           data-cat="{{ post.categories | join: ' ' }}"
           data-text="{{ post.title | append: ' ' | append: post.content | strip_html | truncate: 400 | escape }}">
         <a href="{{ post.url | relative_url }}">
-          {%- if post.image -%}
-          <span class="pi-thumb"><img src="{{ post.image | relative_url }}" alt="" loading="lazy"></span>
+          {%- assign th = post.thumb | default: post.image -%}{%- if th -%}
+          <span class="pi-thumb"><img src="{{ th | relative_url }}" alt="" loading="lazy"></span>
           {%- endif -%}
           <span class="pi-body">
             {%- if post.categories.size > 0 -%}<span class="pc-cat">{{ post.categories | first }}</span>{%- endif -%}

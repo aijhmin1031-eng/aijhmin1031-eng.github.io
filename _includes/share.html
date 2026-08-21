@@ -1,0 +1,13 @@
+<div class="share" data-title="{{ page.title | escape }}">
+  <span class="share-label">이 글이 도움이 되셨다면</span>
+  <div class="share-btns">
+    <button class="share-btn share-native" hidden>📤 공유하기</button>
+    <button class="share-btn share-copy">🔗 링크 복사</button>
+    <a class="share-btn share-x" target="_blank" rel="noopener"
+       href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}">X</a>
+    <a class="share-btn share-fb" target="_blank" rel="noopener"
+       href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | uri_escape }}">f</a>
+    <a class="share-btn share-pin" target="_blank" rel="noopener"
+       href="https://www.pinterest.com/pin/create/button/?url={{ page.url | absolute_url | uri_escape }}&media={{ page.image | absolute_url | uri_escape }}&description={{ page.title | uri_escape }}">P</a>
+  </div>
+</div>

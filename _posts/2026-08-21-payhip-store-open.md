@@ -5,7 +5,8 @@ date: 2026-08-21 06:30:00 +0900
 lang: ko
 starter: true
 starter_order: 2
-image: /assets/hero_store.jpg
+image: /assets/og/payhip-store-open.jpg
+thumb: /assets/hero_store.jpg
 categories: 판매채널
 ---
 

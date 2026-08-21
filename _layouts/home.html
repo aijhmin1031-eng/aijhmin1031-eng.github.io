@@ -21,8 +21,8 @@ layout: default
   <div class="post-cards">
     {%- for post in site.posts -%}
     <a class="post-card" href="{{ post.url | relative_url }}">
-      {%- if post.image -%}
-      <div class="pc-thumb"><img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy"></div>
+      {%- assign th = post.thumb | default: post.image -%}{%- if th -%}
+      <div class="pc-thumb"><img src="{{ th | relative_url }}" alt="{{ post.title | escape }}" loading="lazy"></div>
       {%- endif -%}
       <div class="pc-body">
         {%- if post.categories.size > 0 -%}

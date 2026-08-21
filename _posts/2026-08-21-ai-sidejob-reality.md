@@ -5,7 +5,8 @@ date: 2026-08-21 10:30:00 +0900
 lang: ko
 starter: true
 starter_order: 4
-image: /assets/ai-sidejob-reality.jpg
+image: /assets/og/ai-sidejob-reality.jpg
+thumb: /assets/ai-sidejob-reality.jpg
 categories: AI부업
 ---
 

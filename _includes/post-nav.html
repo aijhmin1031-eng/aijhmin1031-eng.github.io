@@ -20,8 +20,8 @@
   <div class="post-cards">
     {%- for p in rel3 -%}
     <a class="post-card" href="{{ p.url | relative_url }}">
-      {%- if p.image -%}
-      <div class="pc-thumb"><img src="{{ p.image | relative_url }}" alt="{{ p.title | escape }}" loading="lazy"></div>
+      {%- assign th = p.thumb | default: p.image -%}{%- if th -%}
+      <div class="pc-thumb"><img src="{{ th | relative_url }}" alt="{{ p.title | escape }}" loading="lazy"></div>
       {%- endif -%}
       <div class="pc-body">
         {%- if p.categories.size > 0 -%}<span class="pc-cat">{{ p.categories | first }}</span>{%- endif -%}

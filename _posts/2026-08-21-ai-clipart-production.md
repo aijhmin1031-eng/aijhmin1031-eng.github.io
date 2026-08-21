@@ -5,7 +5,8 @@ date: 2026-08-21 07:00:00 +0900
 lang: ko
 starter: true
 starter_order: 3
-image: /assets/hero_atelier.jpg
+image: /assets/og/ai-clipart-production.jpg
+thumb: /assets/hero_atelier.jpg
 categories: 제작공정
 ---
 

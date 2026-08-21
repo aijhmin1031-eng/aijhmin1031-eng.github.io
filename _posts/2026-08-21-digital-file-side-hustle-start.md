@@ -5,7 +5,8 @@ date: 2026-08-21 06:00:00 +0900
 lang: ko
 starter: true
 starter_order: 1
-image: /assets/hero_start.jpg
+image: /assets/og/digital-file-side-hustle-start.jpg
+thumb: /assets/hero_start.jpg
 categories: 시작가이드
 ---
 

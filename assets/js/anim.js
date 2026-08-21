@@ -259,3 +259,93 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
 })();
+
+/* ── 공유 버튼 (모바일은 기기 공유창 → 카톡 공유 가능) ─────────── */
+(function () {
+  'use strict';
+  var box = document.querySelector('.share');
+  if (!box) return;
+  var url = location.href;
+  var title = box.dataset.title || document.title;
+
+  var nat = box.querySelector('.share-native');
+  if (navigator.share && nat) {
+    nat.hidden = false;
+    nat.addEventListener('click', function () {
+      navigator.share({ title: title, url: url }).catch(function () {});
+    });
+  }
+
+  var copy = box.querySelector('.share-copy');
+  if (copy) {
+    copy.addEventListener('click', function () {
+      var done = function () {
+        var old = copy.textContent;
+        copy.textContent = '✅ 복사됐어요';
+        copy.classList.add('ok');
+        setTimeout(function () { copy.textContent = old; copy.classList.remove('ok'); }, 1800);
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(done).catch(function () {});
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = url; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
+})();
+
+/* ── 랜딩: 숫자 카운트업 + 비디오 자동재생(화면에 들어올 때만) ── */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 숫자 세어 올리기 */
+  var nums = [].slice.call(document.querySelectorAll('.lp-num'));
+  if (nums.length) {
+    var run = function (el) {
+      var to = parseInt(el.dataset.to, 10) || 0;
+      var suf = el.dataset.suffix || '';
+      if (reduce) { el.textContent = to + suf; return; }
+      var dur = 1100, t0 = null;
+      var step = function (t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / dur);
+        var e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(to * e) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
+        });
+      }, { threshold: .4 });
+      nums.forEach(function (n) { io.observe(n); });
+    } else {
+      nums.forEach(run);
+    }
+  }
+
+  /* 비디오 — 보일 때만 재생 (데이터·배터리 절약) */
+  var vids = [].slice.call(document.querySelectorAll('.lp-vid video'));
+  if (vids.length && 'IntersectionObserver' in window) {
+    var vo = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (v.preload === 'none') v.preload = 'auto';
+          var pr = v.play();
+          if (pr && pr.catch) pr.catch(function () {});
+        } else if (!v.paused) {
+          v.pause();
+        }
+      });
+    }, { threshold: .35 });
+    vids.forEach(function (v) { vo.observe(v); });
+  }
+})();

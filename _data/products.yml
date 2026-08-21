@@ -1,0 +1,66 @@
+# 상점 상품 — Payhip 등록 상품과 동기화. 새 상품은 아래에 추가.
+- id: kcc
+  name: 스케치북 컴플리트 컬렉션
+  en: SOSO's Sketchbook — The Complete Collection
+  price: "$16.99"
+  badge: 가장 인기
+  desc: 아래 수채화 4종(클립아트·프레임·메뉴킷·비즈니스 페이지)을 전부 담은 묶음입니다. 낱개로 사는 것보다 훨씬 이득이에요.
+  detail: 110개 이상 파일 · PNG + PDF · 상업적 이용 가능
+  url: https://payhip.com/SosotoryStudio
+- id: ksc
+  name: K-스위츠 & 카페 클립아트
+  en: K-Sweets & Cafe — Korean Watercolor Clipart
+  price: "$6.57"
+  desc: 한복, 빙수, 붕어빵, 벚꽃… 한국의 디저트와 카페 풍경을 손으로 그린 듯한 수채화로 담았습니다. 배경이 투명해서 어디에나 얹을 수 있어요.
+  detail: 62 PNG · 3000px · 투명 배경 · 상업적 이용 가능
+  url: https://payhip.com/SosotoryStudio
+- id: kfr
+  name: 수채화 프레임 & 메뉴 카드
+  en: K-Watercolor Frames & Menu Cards
+  price: "$4.94"
+  desc: 가운데가 비어 있는 프레임 모음입니다. 캔바나 워드에서 글자만 넣으면 메뉴판·청첩장·안내문이 됩니다.
+  detail: 12 PNG · 3000px · 세로/가로 비율 포함
+  url: https://payhip.com/SosotoryStudio
+- id: kmk
+  name: 한식 메뉴판 키트
+  en: K-Food Menu Kit
+  price: "$7.42"
+  desc: 카페·식당 사장님을 위한 메뉴판 템플릿 4종과 한식 일러스트 10점. A4로 인쇄하면 바로 쓸 수 있습니다.
+  detail: 메뉴 템플릿 4 + 요리 그림 10 · A4 인쇄용
+  url: https://payhip.com/SosotoryStudio
+- id: kbp
+  name: 소상공인 비즈니스 페이지
+  en: SOSO's Business Pages
+  price: "$6.74"
+  desc: 가격표, 기프트 바우처, 명함, 안내판까지 — 네일숍·꽃집·사진관 사장님이 바로 쓰는 템플릿 9종입니다.
+  detail: 9 템플릿 · PNG + 인쇄용 PDF
+  url: https://payhip.com/SosotoryStudio
+- id: kct
+  name: 한글 캘리그라피 트릴로지
+  en: Hangul Calligraphy — The Complete Trilogy
+  price: "$9.99"
+  badge: 캘리 묶음
+  desc: 붓글씨 한글 디자인 3종 세트를 한 번에. 티셔츠·머그컵·타투 도안으로 쓸 수 있는 벡터 파일입니다.
+  detail: 36 디자인 · SVG + PNG + EPS + PDF
+  url: https://payhip.com/SosotoryStudio
+- id: kp
+  name: 한글 캘리그라피 프로 12
+  en: Hangul Calligraphy Pro
+  price: "$4.99"
+  desc: 붓으로 쓴 한글 단어 12종. 검정 잉크와 흰 잉크 버전이 모두 들어 있어 어두운 배경에도 씁니다.
+  detail: 12 디자인 · SVG · 확대해도 깨지지 않음
+  url: https://payhip.com/SosotoryStudio
+- id: kph
+  name: 한글 문구 캘리그라피 9
+  en: Korean Phrases Pro
+  price: "$4.99"
+  desc: "사랑해", "오늘도 수고했어" 같은 문구 9종. 뜻을 한국어 원어민이 확인해 타투에도 안심하고 쓸 수 있습니다.
+  detail: 9 문구 · SVG + PNG
+  url: https://payhip.com/SosotoryStudio
+- id: hg
+  name: 한글 캘리그라피 입문 15
+  en: Hangul Calligraphy Starter
+  price: "$3.99"
+  desc: 처음 시작하기 좋은 한글 단어 15종. 금박·흰색·한지 질감 보너스 버전이 함께 들어갑니다.
+  detail: 15 단어 + 보너스 3종
+  url: https://payhip.com/SosotoryStudio

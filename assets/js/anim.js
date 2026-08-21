@@ -11,7 +11,7 @@
   /* 1) 스크롤 등장 — 화면에 들어오면 한 번만 재생 */
   var SELECTOR = [
     '.story-row', '.post-card', '.fb-item', '.shop-cta', '.freebie-callout',
-    '.starter-box', '.drop-head', '.mini-cta', '.post-content > h2',
+    '.starter-box', '.drop-head', '.mini-cta', '.product', '.buy-note', '.post-content > h2',
     '.post-content > h3', '.post-content > p', '.post-content > ul',
     '.post-content > ol', '.post-content > table', '.post-content > blockquote',
     '.post-content > p > img', '.latest-heading'

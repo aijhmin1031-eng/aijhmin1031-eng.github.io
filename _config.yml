@@ -12,6 +12,7 @@ logo: /assets/brand/profile_blog.jpg
 
 header_pages:
   - about.md
+  - shop.md
   - freebies.md
   - privacy.md
   - contact.md

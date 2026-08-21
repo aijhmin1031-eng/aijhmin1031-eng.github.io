@@ -15,6 +15,8 @@ header_pages:
   - privacy.md
   - contact.md
 
+permalink: /post/:title/
+
 show_excerpts: true
 
 # 무료나눔 다음 공개 예정일 (드랍 루틴이 갱신)
@@ -32,6 +34,8 @@ plugins:
 exclude:
   - docs/
   - README.md
+  - CLAUDE.md
+  - scripts/
   - _unpublished_en/
 
 # 검색엔진 소유 확인 (jekyll-seo-tag가 meta 태그로 출력)

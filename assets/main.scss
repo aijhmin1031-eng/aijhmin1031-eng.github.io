@@ -137,3 +137,87 @@ table th, table td { border: 1px solid #EAE2D8; }
   text-decoration: none; margin-bottom: 10px;
 }
 .fb-lightbox .fb-dl { display: inline-block; }
+
+/* --- 상점 CTA 카드 --- */
+.shop-cta {
+  display: flex; align-items: center; gap: 18px; margin: 34px 0 22px;
+  padding: 20px 22px; border-radius: 18px; text-decoration: none !important;
+  background: linear-gradient(135deg, #FCF3F1 0%, #FAF7F2 60%, #F6F1E9 100%);
+  border: 2px solid #E9C9CC; box-shadow: 0 4px 16px rgba(62,50,46,.07);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.shop-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(186,98,106,.20); }
+.shop-cta-img { width: 118px; flex: 0 0 118px; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+.shop-cta-body { display: block; }
+.shop-cta-kicker {
+  display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .06em;
+  color: #fff; background: #BA626A; border-radius: 999px; padding: 4px 12px; margin-bottom: 9px;
+}
+.shop-cta-title {
+  display: block; font-family: "Gowun Batang", serif; font-weight: 700;
+  font-size: 1.16rem; line-height: 1.45; color: #3E322E; margin-bottom: 5px;
+}
+.shop-cta-desc { display: block; font-size: .89rem; color: #7a6f68; margin-bottom: 12px; }
+.shop-cta-btn {
+  display: inline-block; padding: 10px 24px; border-radius: 999px;
+  background: #BA626A; color: #fff; font-weight: 700; font-size: .93rem;
+}
+.shop-cta:hover .shop-cta-btn { background: #a5545c; }
+@media (max-width: 520px) {
+  .shop-cta { flex-direction: column; text-align: center; gap: 10px; }
+  .shop-cta-img { width: 96px; flex: none; }
+}
+
+/* 작은 유도 링크 */
+.mini-cta {
+  display: block; text-align: center; margin: 6px 0 10px; padding: 13px 16px;
+  border-radius: 12px; background: #FAF7F2; border: 1px dashed #E9C9CC;
+  font-size: .92rem; color: #6f635b !important; text-decoration: none !important;
+}
+.mini-cta:hover { border-style: solid; color: #BA626A !important; }
+
+/* 헤더 상점 링크 강조 */
+.nav-shop {
+  background: #BA626A; color: #fff !important; border-radius: 999px;
+  padding: 5px 14px !important; font-weight: 700;
+}
+.nav-shop:hover { background: #a5545c; text-decoration: none !important; }
+
+/* --- 홈 스토리 섹션 --- */
+.story { margin: 30px 0 8px; }
+.story-row {
+  display: flex; align-items: center; gap: 26px; margin-bottom: 30px;
+  padding-bottom: 26px; border-bottom: 1px solid #F0E9E0;
+}
+.story-row.reverse { flex-direction: row-reverse; }
+.story-row img {
+  width: 190px; flex: 0 0 190px; border-radius: 14px; margin: 0;
+  box-shadow: 0 3px 14px rgba(62,50,46,.10);
+}
+.story-row h2 {
+  margin: 0 0 8px; font-size: 1.32rem; font-family: "Gowun Batang", serif;
+}
+.story-row p { margin: 0; color: #5c524c; line-height: 1.8; }
+.story-row:last-child { border-bottom: none; }
+@media (max-width: 600px) {
+  .story-row, .story-row.reverse { flex-direction: column; text-align: center; gap: 14px; }
+  .story-row img { width: 150px; flex: none; }
+}
+.latest-sub { color: #9b8f86; font-size: .92rem; margin: 4px 0 0; }
+
+/* --- 무료나눔 회차 헤더 --- */
+.drop-next {
+  background: #FAF7F2; border: 1px solid #EAE2D8; border-radius: 10px;
+  padding: 11px 16px; font-size: .92rem; color: #6f635b; margin: 18px 0 26px;
+}
+.drop-head {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  margin: 34px 0 4px; padding-bottom: 10px; border-bottom: 2px solid #E9C9CC;
+}
+.drop-vol {
+  background: #BA626A; color: #fff; font-weight: 700; font-size: .82rem;
+  border-radius: 999px; padding: 4px 13px;
+}
+.drop-title { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.2rem; color: #3E322E; }
+.drop-date { margin-left: auto; font-size: .85rem; color: #9b8f86; }
+.drop-note { color: #7a6f68; font-size: .9rem; margin: 8px 0 0; }

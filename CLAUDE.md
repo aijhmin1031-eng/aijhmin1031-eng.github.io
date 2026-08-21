@@ -25,19 +25,30 @@
 6. 발행한 글감은 백로그에서 `- [x]`로 체크 + 발행일 기입.
 7. 커밋·푸시 후 `curl -s https://aijhmin1031-eng.github.io/ | grep <슬러그>`로 반영 확인.
 
-## 무료나눔 드랍 공정 (3일 간격)
+## 무료나눔 드랍 공정 (3일 간격, **회차당 4종**)
 
 1. `docs/무료나눔_테마백로그.md` 최상단 미발행 테마 선택 (시즌 임박 테마는 당김).
-2. `scripts/freebie_gen.py`로 5종 생성 → transparentize(모서리 플러드필, 내부 흰색 보존,
+   ※ Vol.1에서 보류한 `blossom`(벚꽃)은 봄 팩에 넣을 것 — PNG는 이미 생성돼 있음.
+2. `scripts/freebie_gen.py`로 **4종** 생성 → transparentize(모서리 플러드필, 내부 흰색 보존,
    3000px) → **전수 육안 검수** (이상 소품·문화 고증·스타일 이탈 시 재생성).
 3. 배포 3종 세트를 `assets/freebies/`에 추가:
    - `png/soso_<이름>.png` — 원본 투명 PNG 3000px (**낱장 직접 다운로드가 기본**)
    - `thumb/soso_<이름>.jpg` 500px + `_lg.jpg` 1000px — **크림(#FAF7F2) 배경에 합성**
      (투명 PNG를 JPEG로 만들면 검게 되므로 반드시 배경 합성)
    - ZIP(LICENSE.txt 동봉 — 개인·소상공인 허용, 재판매·재배포 금지, AI 공시) — 선택지로 유지
-4. `freebies.md`에 새 팩 섹션 **누적 추가** (최신 팩이 위). 형식은 기존 팩과 동일:
-   `.freebie-grid` 썸네일 갤러리 + 낱장 `⬇ PNG 받기` 버튼 + `.fb-lightbox` 크게보기
-   (CSS만으로 동작하는 `:target` 라이트박스, id는 `view-<이름>`으로 팩마다 유일하게).
+4. **`_data/freebies.yml` 맨 아래에 새 회차 추가** (freebies.md는 이 데이터로 자동 렌더링 —
+   페이지 HTML은 건드리지 말 것):
+   ```yaml
+   - vol: 2
+     title: 홈카페 티타임
+     date: 2026-08-24        # 공개일자 필수 — 방문자가 주기를 보고 재방문함
+     note: 한 줄 소개
+     zip: /assets/freebies/soso_teatime_vol2.zip
+     items:
+       - { file: teapot, label: 티팟 }   # file은 png/thumb 파일명과 일치, 4개
+   ```
+   그리고 `_config.yml`의 `next_drop`을 **다음 드랍일(3일 후)**로 갱신한다.
+   파일명은 팩마다 유일해야 함(라이트박스 id 충돌 방지).
 5. 드랍 소개 글 1편 발행 (미리보기 이미지 + 아이템 소개 + 다운로드 링크 + 상점 유도)
    — 그날의 일일 글과 별개, 짧아도 됨. categories: 무료나눔
 6. 백로그 체크 + 드랍 이력 기입, 커밋·푸시, 사이트 반영 확인.

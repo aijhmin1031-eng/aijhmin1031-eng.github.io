@@ -1,0 +1,12 @@
+# 무료나눔 드랍 기록 — 새 팩은 맨 아래에 추가 (페이지는 최신순으로 표시)
+# 한 팩 = 4종. 공개일자 필수.
+- vol: 1
+  title: 소소의 아침 책상
+  date: 2026-08-21
+  note: 첫 공개 — 커피와 노트가 있는 아침 책상
+  zip: /assets/freebies/soso_desk_vol1.zip
+  items:
+    - { file: latte,      label: 라떼 한 잔 }
+    - { file: sketchbook, label: 스케치북 }
+    - { file: acorns,     label: 도토리 삼형제 }
+    - { file: tart,       label: 딸기 타르트 }

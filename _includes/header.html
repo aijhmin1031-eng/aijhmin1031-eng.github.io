@@ -1,0 +1,14 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">🌰 {{ site.title | escape }}</a>
+    <nav class="site-nav">
+      {%- for path in site.header_pages -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      <a class="page-link nav-shop" href="https://payhip.com/SosotoryStudio" target="_blank" rel="noopener">🛍 상점</a>
+    </nav>
+  </div>
+</header>

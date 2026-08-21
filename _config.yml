@@ -17,6 +17,9 @@ header_pages:
 
 show_excerpts: true
 
+# 무료나눔 다음 공개 예정일 (드랍 루틴이 갱신)
+next_drop: "2026-08-24"
+
 minima:
   date_format: "%Y-%m-%d"
 

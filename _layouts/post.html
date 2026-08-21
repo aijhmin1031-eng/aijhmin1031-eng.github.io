@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%Y-%m-%d" }}
+      </time>
+      {%- if page.categories.size > 0 -%}
+      · <span class="pc-cat">{{ page.categories | first }}</span>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% include shop-cta.html %}
+
+  <a class="mini-cta" href="{{ '/freebies/' | relative_url }}">
+    🎁 무료 클립아트 받으러 가기 — 3일마다 새 팩이 올라옵니다 →
+  </a>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

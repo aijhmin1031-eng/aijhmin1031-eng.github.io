@@ -10,3 +10,13 @@
     - { file: sketchbook, label: 스케치북 }
     - { file: acorns,     label: 도토리 삼형제 }
     - { file: tart,       label: 딸기 타르트 }
+- vol: 2
+  title: 홈카페 티타임
+  date: 2026-08-23
+  note: 두 번째 공개 — 티팟과 마카롱이 있는 오후의 홈카페
+  zip: /assets/freebies/soso_teatime_vol2.zip
+  items:
+    - { file: teapot,    label: 꽃무늬 티팟 }
+    - { file: macaron,   label: 핑크 마카롱 }
+    - { file: sugarcube, label: 각설탕 접시 }
+    - { file: lemon,     label: 레몬 슬라이스 }

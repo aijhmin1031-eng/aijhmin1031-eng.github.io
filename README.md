@@ -1,10 +1,11 @@
 # 소소의 작업실 — SOSO's Atelier
 
-디지털 부업 노하우 블로그 (한국어+영어). GitHub Pages(Jekyll)로 호스팅,
-목표는 유용한 콘텐츠 축적 + Google AdSense 수익화.
+디지털 부업 노하우 블로그 (한국어 전용 — 영어판은 `_unpublished_en/`에 보관).
+GitHub Pages(Jekyll)로 호스팅, 목표는 유용한 콘텐츠 축적 + Google AdSense 수익화.
 
 - 사이트: https://aijhmin1031-eng.github.io/
-- 기획·운영 문서: `docs/운영계획.md` (Drive `SOSO_작업실_블로그` 폴더에 사본)
+- **이어받는 사람은 `docs/HANDOFF.md`부터 읽을 것** (구조·도구·사고 이력·진행 상황 전부)
+- 발행 공정: `CLAUDE.md` / 기획·운영: `docs/운영계획.md` (Drive `SOSO_작업실_블로그`에 사본)
 
 ## 글 쓰는 법
 
@@ -15,7 +16,8 @@
 layout: post
 title: "제목"
 date: 2026-08-21 10:00:00 +0900
-lang: ko        # 영어 글은 en — /en/ 페이지 목록에 자동 표시
+lang: ko
+image: /assets/og/슬러그.jpg   # 공유 카드 / thumb: 히어로
 categories: 시작가이드
 ---
 ```
